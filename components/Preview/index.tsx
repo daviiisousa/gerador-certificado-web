@@ -1,0 +1,67 @@
+"use client";
+import { ImageSquare } from "phosphor-react";
+import { useCertificate } from "@/contexts/CertificateContext";
+import Image from "next/image";
+import { AlertSucess } from "../Alerts/AlertSucess";
+
+export function Preview() {
+  const { previewImage, position } = useCertificate();
+
+  return (
+    <div className="w-full mt-8 rounded-md max-w-2xl shadow-sm p-5 bg-white dark:bg-neutral-900">
+      <h2 className="text-lg font-semibold">Preview do Template</h2>
+      <div className="mt-4 w-full h-96 border-2 border-dashed border-gray-300 dark:border-gray-500 rounded-md flex flex-col items-center justify-center relative overflow-hidden">
+        {previewImage ? (
+          <>
+            <Image
+              src={previewImage}
+              alt="Preview do certificado"
+              fill
+              className="object-contain"
+            />
+            <div
+              className="absolute left-0 right-0 h-0.5 bg-red-500 shadow-lg transition-all"
+              style={{ top: `${position.y}%` }}
+            >
+              <div className="absolute right-2 -top-7 bg-red-500 text-white px-2 py-1 rounded text-xs font-medium whitespace-nowrap">
+                Y: {position.y}%
+              </div>
+            </div>
+            <div
+              className="absolute top-0 bottom-0 w-0.5 bg-green-500 shadow-lg transition-all"
+              style={{ left: `${position.x}%` }}
+            >
+              <div className="absolute top-1/2 -translate-y-1/2 -left-8 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium whitespace-nowrap">
+                X: {position.x}%
+              </div>
+            </div>
+            <div
+              className="absolute w-4 h-4 bg-purple-500 border-2 border-background rounded-full -translate-x-1/2 -translate-y-1/2 shadow-lg animate-pulse"
+              style={{
+                left: `${position.x}%`,
+                top: `${position.y}%`,
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <ImageSquare color="#6a7282" size={40} weight="bold" />
+            <span className="text-gray-500 dark:text-gray-400">
+              Aqui será exibido o preview do template do certificado
+            </span>
+          </>
+        )}
+      </div>
+      <div className="mt-4 dark:bg-neutral-800 p-2 rounded-md text-black/70 dark:text-gray-300 text-sm">
+        <div className="flex items-center gap-4">
+          <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+          <p>Linha Vermelha (Horizontal) - Posição Y</p>
+        </div>
+        <div className="mt-2 flex items-center gap-4">
+          <span className="block w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+          <p>Linha Verde (Vertical) - Posição X</p>
+        </div>
+      </div>
+    </div>
+  );
+}
