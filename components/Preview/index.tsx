@@ -2,7 +2,6 @@
 import { ImageSquare } from "phosphor-react";
 import { useCertificate } from "@/contexts/CertificateContext";
 import Image from "next/image";
-import { AlertSucess } from "../Alerts/AlertSucess";
 
 export function Preview() {
   const { previewImage, position } = useCertificate();
@@ -23,7 +22,7 @@ export function Preview() {
               className="absolute left-0 right-0 h-0.5 bg-red-500 shadow-lg transition-all"
               style={{ top: `${position.y}%` }}
             >
-              <div className="absolute right-2 -top-7 bg-red-500 text-white px-2 py-1 rounded text-xs font-medium whitespace-nowrap">
+              <div className="absolute right-2 -top-7 bg-red-500/90 text-white px-2  rounded text-xs font-medium whitespace-nowrap">
                 Y: {position.y}%
               </div>
             </div>
@@ -31,17 +30,22 @@ export function Preview() {
               className="absolute top-0 bottom-0 w-0.5 bg-green-500 shadow-lg transition-all"
               style={{ left: `${position.x}%` }}
             >
-              <div className="absolute top-1/2 -translate-y-1/2 -left-8 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium whitespace-nowrap">
+              <div className="absolute top-1/2 -translate-y-1/2 -left-8 bg-green-500/90 text-white px-2  rounded text-xs font-medium whitespace-nowrap">
                 X: {position.x}%
               </div>
             </div>
+
             <div
-              className="absolute w-4 h-4 bg-purple-500 border-2 border-background rounded-full -translate-x-1/2 -translate-y-1/2 shadow-lg animate-pulse"
+              className="absolute -translate-x-1/2 text-center"
               style={{
                 left: `${position.x}%`,
                 top: `${position.y}%`,
               }}
-            />
+            >
+              <p className="text-sm font-bold text-black drop-shadow-lg  ">
+                Nome do Aluno
+              </p>
+            </div>
           </>
         ) : (
           <>

@@ -45,6 +45,9 @@ export function FormDataCertificate() {
       formData.append("modeloCertificado", dataModelCertificate);
       formData.append("csvFile", csvFile);
 
+      formData.append("positionX", position.x.toString());
+      formData.append("positionY", position.y.toString());
+
       const response = await createCertificate(formData);
 
       if (response.ok) {
