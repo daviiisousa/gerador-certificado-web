@@ -4,8 +4,8 @@ import { Preview } from "@/components/Preview";
 import { gradientColor } from "@/helpers/gradientColor";
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex min-h-screen w-full max-w-7xl flex-col items-center justify-between py-8 px-10 bg-white dark:bg-[#0A0A0A] sm:items-start">
+    <div className="flex min-h-screen items-center justify-center font-sans w-full">
+      <main className="flex min-h-screen w-full max-w-7xl flex-col items-center justify-center py-8 px-10 bg-white dark:bg-[#0A0A0A] sm:items-start ">
         <div className="w-full flex justify-center">
           <div className="w-full mb-8">
             <h1

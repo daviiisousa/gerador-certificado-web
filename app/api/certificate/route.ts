@@ -31,3 +31,30 @@ export async function POST(request: Request) {
     throw error;
   }
 }
+
+export async function GET(){
+  try {
+    
+    const response = await fetch("http://localhost:8000/arquivos-zip")
+
+    if (!response.ok) {
+      return Response.json(
+        {
+          ok: false,
+          message: "Erro ao buscar arquivos zip",
+        },
+        { status: response.status }
+      );
+    }
+
+    const result = await response.json();
+
+    return Response.json({
+      ok: true,
+      message: "Arquivos zip buscados com sucesso!",
+      data: result,
+    });
+  } catch (error) {
+    throw error;
+  }
+}
