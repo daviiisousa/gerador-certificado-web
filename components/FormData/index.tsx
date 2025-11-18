@@ -6,6 +6,7 @@ import { InputFile } from "../InputFile";
 import { Button } from "../ui/button";
 import { useCertificate } from "@/contexts/CertificateContext";
 import { toast } from "sonner";
+import { gradientColor } from "@/helpers/gradientColor";
 
 export function FormDataCertificate() {
   const {
@@ -68,7 +69,7 @@ export function FormDataCertificate() {
     <>
       <form
         onSubmit={handleSubmitCertificate}
-        className="mt-8 flex w-full max-w-2xl flex-col bg-white dark:bg-neutral-900 p-5 rounded-sm shadow-md h-fit"
+        className="mt-4 flex w-full max-w-2xl flex-col bg-white dark:bg-neutral-900 p-5 rounded-sm drop-shadow-2xl h-fit dark:shadow-none"
       >
         <div className="w-full">
           <InputFile
@@ -105,7 +106,7 @@ export function FormDataCertificate() {
           Faça upload da planilha CSV com os dados dos certificados
         </span>
         <Button
-          className="mt-4"
+          className={`mt-4 ${gradientColor.bgGradient} font-semibold`}
           disabled={!dataModelCertificate || !csvFile}
           type="submit"
         >

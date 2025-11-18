@@ -7,7 +7,7 @@ export function Preview() {
   const { previewImage, position } = useCertificate();
 
   return (
-    <div className="w-full mt-8 rounded-md max-w-2xl shadow-sm p-5 bg-white dark:bg-neutral-900">
+    <div className="w-full mt-4 rounded-md max-w-2xl shadow-2xl p-5 bg-white dark:bg-neutral-900">
       <h2 className="text-lg font-semibold">Preview do Template</h2>
       <div className="mt-4 w-full h-96 border-2 border-dashed border-gray-300 dark:border-gray-500 rounded-md flex flex-col items-center justify-center relative overflow-hidden">
         {previewImage ? (
