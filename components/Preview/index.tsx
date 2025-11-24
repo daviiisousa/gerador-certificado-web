@@ -50,7 +50,7 @@ export function Preview() {
         ) : (
           <>
             <ImageSquare color="#6a7282" size={40} weight="bold" />
-            <span className="text-gray-500 dark:text-gray-400">
+            <span className="text-gray-500 dark:text-gray-400 text-center text-sm md:text-base px-2 md:px-0">
               Aqui será exibido o preview do template do certificado
             </span>
           </>
@@ -58,11 +58,11 @@ export function Preview() {
       </div>
       <div className="mt-4 dark:bg-neutral-800 p-2 rounded-md text-black/70 dark:text-gray-300 text-sm">
         <div className="flex items-center gap-4">
-          <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+          <span className="block w-2.5 h-2.5 bg-red-500 rounded-full text-sm md:text-base"></span>
           <p>Linha Vermelha (Horizontal) - Posição Y</p>
         </div>
         <div className="mt-2 flex items-center gap-4">
-          <span className="block w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+          <span className="block w-2.5 h-2.5 bg-green-500 rounded-full text-sm md:text-base"></span>
           <p>Linha Verde (Vertical) - Posição X</p>
         </div>
       </div>

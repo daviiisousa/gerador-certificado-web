@@ -37,7 +37,7 @@ export function GetZipeFiles() {
             <p className="text-gray-600 dark:text-gray-300">Nenhum certificado encontrado.</p>
            ) : (
             <div className="w-full ">
-                <h2 className="text-4xl font-semibold mb-4">Total de certificados: {zipFiles.length} </h2>
+                <h2 className="text-2xl md:text-4xl font-semibold mb-4">Total de certificados: {zipFiles.length} </h2>
                 <div className={`mb-8 w-full h-1 rounded-sm ${gradientColor.bgGradient}`} />
                 <div className="flex w-full flex-wrap gap-4">
                     {zipFiles.map((fileName: string, index: number) => (
